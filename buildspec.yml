@@ -16,7 +16,8 @@ phases:
       - aws lambda update-function-code --function-name dev-book-repo --zip-file fileb://./target/book-repo-1.0-SNAPSHOT-lambda-package.zip
       - echo "DONE!!"
       - echo "Uploading to S3.."
-      - aws s3 cp --zip-file fileb://./target/book-repo-1.0-SNAPSHOT-lambda-package.zip s3://iitarticats/myBuild.zip
+      - cd target
+      - aws s3 cp book-repo-1.0-SNAPSHOT-lambda-package.zip s3://iitarticats/myBuild.zip
 #artifacts:
 #  files:
 #    - book-repo-1.0-SNAPSHOT-lambda-package.zip
