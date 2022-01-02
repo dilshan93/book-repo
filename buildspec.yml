@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+    commands:
+      - echo Build started on `date`
+  build:
+    commands:
+      - echo Build completed on `date`
+      - mvn package
+      - echo "Zipping deployment package..."
+  post_build:
+    commands:
+      - echo "Updating lambda Function..."
+      - aws lambda update-function-code --function-name dev-book-repo --zip-file fileb://./target/book-repo-1.0-SNAPSHOT-lambda-package.zip
+      - echo "DONE!!"
