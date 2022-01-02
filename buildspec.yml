@@ -17,4 +17,4 @@ phases:
       - echo "DONE!!"
 artifacts:
   files:
-    - zip-file fileb://./target/book-repo-1.0-SNAPSHOT-lambda-package.zip
+    - book-repo-1.0-SNAPSHOT-lambda-package.zip
