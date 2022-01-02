@@ -15,3 +15,6 @@ phases:
       - echo "Updating lambda Function..."
       - aws lambda update-function-code --function-name dev-book-repo --zip-file fileb://./target/book-repo-1.0-SNAPSHOT-lambda-package.zip
       - echo "DONE!!"
+  artifacts:
+    files:
+      - '**/*'
